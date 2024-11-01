@@ -1,4 +1,4 @@
-import { IconProps } from '../types';
+import type { IconProps } from '../types';
 import type { Component } from 'solid-js';
 
 export const Loader: Component<IconProps> = (props) => (

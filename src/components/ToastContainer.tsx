@@ -1,5 +1,5 @@
-import { createMemo, onMount, Component } from 'solid-js';
-import { ToastContainerProps } from '../';
+import { createMemo, onMount, type Component } from 'solid-js';
+import type { ToastContainerProps } from '../';
 import { defaultToastOptions, dispatch } from '../core';
 import { ActionType, resolveValue } from '../types';
 import { getToastWrapperStyles, getWrapperYAxisOffset, updateToastHeight } from '../util';

@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { IconProps } from '../types';
+import type { IconProps } from '../types';
 import { genSVGCubicBezier } from '../util';
 import { MainCircle, SecondaryCircle } from './IconCircle';
 

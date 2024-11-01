@@ -1,10 +1,18 @@
 import { createRoot, createSignal, untrack } from 'solid-js';
-import { ToasterProps, Message, ToastType, ToastOptions, Toast, ToastHandler, ActionType } from '../types';
+import {
+  type ToasterProps,
+  type Message,
+  type ToastType,
+  type ToastOptions,
+  type Toast,
+  type ToastHandler,
+  ActionType,
+} from '../types';
 import { defaultToasterOptions, defaultToastOptions, defaultTimeouts } from './defaults';
 import { generateID } from '../util';
 import { dispatch, store } from './store';
 
-import { resolveValue, Renderable, ValueOrFunction, DefaultToastOptions } from '../types';
+import { resolveValue, type Renderable, type ValueOrFunction, type DefaultToastOptions } from '../types';
 
 export const [defaultOpts, setDefaultOpts] = createSignal<ToasterProps>(defaultToasterOptions);
 

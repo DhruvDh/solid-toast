@@ -1,4 +1,4 @@
-import { State, Action, ActionType, Toast } from '../types';
+import { type State, type Action, ActionType, type Toast } from '../types';
 import { createStore, produce as p } from 'solid-js/store';
 
 const [store, setStore] = createStore<State>({
@@ -123,12 +123,14 @@ export const dispatch = (action: Action) => {
         : dispatch({ type: ActionType.ADD_TOAST, toast: action.toast });
       break;
     case ActionType.START_PAUSE:
-      setStore(p((s) => {
-        s.pausedAt = Date.now();
-        s.toasts.forEach((t) => {
-          t.paused = true;
-        });
-      }));
+      setStore(
+        p((s) => {
+          s.pausedAt = Date.now();
+          s.toasts.forEach((t) => {
+            t.paused = true;
+          });
+        })
+      );
       break;
     case ActionType.END_PAUSE:
       const pauseInterval = action.time - (store.pausedAt || 0);
